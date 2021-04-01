@@ -22,6 +22,7 @@ fn main() {
     }
 }
 
+/// Return count of vowels in word
 fn count_vowels(word: &str) -> i32 {
     let vowels = "aeiou";
     let mut count = 0;
