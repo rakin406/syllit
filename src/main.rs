@@ -38,7 +38,6 @@ fn count_vowels(word: &str) -> i32 {
                     }
                 }
                 count = count + 1;
-                break;
             }
         }
     }
