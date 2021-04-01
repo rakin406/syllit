@@ -28,12 +28,12 @@ fn count_vowels(word: &str) -> i32 {
     let mut count = 0;
 
     // Find vowels in word
-    for i in word.to_ascii_lowercase().chars() {
-        for j in vowels.chars() {
-            if i == j {
+    for i in vowels.chars() {
+        for j in word.to_ascii_lowercase().chars() {
+            if j == i {
                 // Magic e syllable
-                if i == word.chars().last().unwrap() {
-                    if i == 'e' {
+                if j == word.chars().last().unwrap() {
+                    if j == 'e' {
                         continue;
                     }
                 }
