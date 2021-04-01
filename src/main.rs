@@ -31,15 +31,14 @@ fn count_vowels(word: &str) -> i32 {
     for i in vowels.chars() {
         for j in word.to_ascii_lowercase().chars() {
             if j == i {
-                // Magic e syllable
-                if j == word.chars().last().unwrap() {
-                    if j == 'e' {
-                        continue;
-                    }
-                }
                 count = count + 1;
             }
         }
+    }
+
+    // Magic e syllable
+    if word.chars().last().unwrap() == 'e' {
+        count = count - 1;
     }
 
     return count;
