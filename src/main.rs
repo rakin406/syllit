@@ -16,8 +16,8 @@ fn main() {
             println!("Syllables: {}", count_vowels(&args[1]));
         }
     } else {
-        println!("Please give argument");
-        println!("Try -h option");
+        println!("Please give argument.");
+        println!("Try -h option.");
         process::exit(1);
     }
 }
