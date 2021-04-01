@@ -1,3 +1,5 @@
+// TODO: Get CLI argument
 fn main() {
-    println!("Hello, world!");
+    let vowels = "aeiou";
+    let word = "Hello";
 }
