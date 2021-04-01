@@ -10,8 +10,8 @@ fn main() {
     if args.len() > 1 {
         if args[1] == "-h" || args[1] == "--help" {
             // Help info
-            println!("Usage: cargo run <word>");
-            println!("Example: cargo run hello");
+            println!("Usage: ./syllit <word>");
+            println!("Example: ./syllit hello");
         } else {
             println!("Syllables: {}", count_vowels(&args[1]));
         }
