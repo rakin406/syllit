@@ -8,8 +8,7 @@ fn main() {
 
     // Process CLI argument
     if args.len() > 1 {
-        println!("The first argument is {}", args[1]);
-        println!("Syllables: {}", count_vowels(args[1]));
+        println!("Syllables: {}", count_vowels(&args[1]));
     } else {
         println!("Give argument");
         process::exit(1);
