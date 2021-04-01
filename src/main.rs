@@ -8,9 +8,16 @@ fn main() {
 
     // Process CLI argument
     if args.len() > 1 {
-        println!("Syllables: {}", count_vowels(&args[1]));
+        if args[1] == "-h" || args[1] == "--help" {
+            // Help info
+            println!("Usage: cargo run <word>");
+            println!("Example: cargo run hello");
+        } else {
+            println!("Syllables: {}", count_vowels(&args[1]));
+        }
     } else {
-        println!("Give argument");
+        println!("Please give argument");
+        println!("Try -h option");
         process::exit(1);
     }
 }
