@@ -26,9 +26,13 @@ fn count_vowels(word: &str) -> i32 {
     let vowels = "aeiou";
     let mut count = 0;
 
-    for c in vowels.chars() {
-        if word.to_ascii_lowercase().contains(c) {
-            count = count + 1;
+    // Find vowels in word
+    for i in word.to_ascii_lowercase().chars() {
+        for j in vowels.chars() {
+            if i == j {
+                count = count + 1;
+                break;
+            }
         }
     }
 
