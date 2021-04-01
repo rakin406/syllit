@@ -1,26 +1,30 @@
 use std::env;
 use std::process;
 
+// Syllabification
+
 fn main() {
     let args: Vec<_> = env::args().collect();
-    let vowels = "aeiou";
-    let word = "HELLO";
-    let mut syllables = 0;
 
     // Process CLI argument
     if args.len() > 1 {
         println!("The first argument is {}", args[1]);
+        println!("Syllables: {}", count_vowels(args[1]));
     } else {
         println!("Give argument");
         process::exit(1);
     }
+}
 
-    // Find vowels in word
+fn count_vowels(word: &str) -> i32 {
+    let vowels = "aeiou";
+    let mut count = 0;
+
     for c in vowels.chars() {
         if word.to_ascii_lowercase().contains(c) {
-            syllables = syllables + 1;
+            count = count + 1;
         }
     }
 
-    println!("{}", syllables);
+    return count;
 }
