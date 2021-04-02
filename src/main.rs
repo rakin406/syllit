@@ -38,10 +38,11 @@ fn count_syllables(word: &str) -> i32 {
     let mut count = 0;
     let mut prev_char = '\0';
 
-    // Find vowels in word
+    // Find syllables in word
     for c in word.to_ascii_lowercase().chars() {
         if is_vowel(c) {
-            if c != prev_char {
+            // Vowel team
+            if c != prev_char && !is_vowel(prev_char) {
                 count = count + 1;
             }
         }
