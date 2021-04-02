@@ -22,9 +22,10 @@ fn main() {
     }
 }
 
-/// Return if letter is vowel or not
+/// Return if letter is vowel or not.
+/// This also considers 'y' as a vowel.
 fn is_vowel(letter: char) -> bool {
-    let vowels = "aeiou";
+    let vowels = "aeiouy";
     for c in vowels.chars() {
         if c == letter.to_ascii_lowercase() {
             return true;
