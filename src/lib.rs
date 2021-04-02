@@ -1,7 +1,6 @@
 /// Return if letter is vowel or not.
-/// This also considers 'y' as a vowel.
-fn is_vowel(letter: char) -> bool {
-    let vowels = "aeiouy";
+pub fn is_vowel(letter: char) -> bool {
+    let vowels = "aeiou";
     for c in vowels.chars() {
         if c == letter.to_ascii_lowercase() {
             return true;
@@ -18,7 +17,7 @@ pub fn count_syllables(word: &str) -> i32 {
 
     // Find syllables in word
     for c in mod_word.chars() {
-        if is_vowel(c) {
+        if is_vowel(c) || c == 'y' {
             // Vowel team
             if c != prev_char && !is_vowel(prev_char) {
                 count = count + 1;
