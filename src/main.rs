@@ -13,7 +13,7 @@ fn main() {
             println!("Usage: ./syllit <word>");
             println!("Example: ./syllit hello");
         } else {
-            println!("Syllables: {}", count_vowels(&args[1]));
+            println!("Syllables: {}", count_syllables(&args[1]));
         }
     } else {
         println!("Please give argument.");
@@ -22,8 +22,8 @@ fn main() {
     }
 }
 
-/// Return count of vowels in word
-fn count_vowels(word: &str) -> i32 {
+/// Return count of syllables in word
+fn count_syllables(word: &str) -> i32 {
     let vowels = "aeiou";
     let mut count = 0;
 
