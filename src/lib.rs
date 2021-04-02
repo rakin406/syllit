@@ -27,9 +27,11 @@ pub fn count_syllables(word: &str) -> i32 {
     }
 
     // Magic e syllable, consonant 'l' must not exist before 'e'
-    let last_two: Vec<char> = word.to_ascii_lowercase().chars().rev().take(2).collect();
-    if last_two[0] == 'e' && last_two[1] != 'l' {
-        count = count - 1;
+    if count >= 2 {
+        let last_two: Vec<char> = word.to_ascii_lowercase().chars().rev().take(2).collect();
+        if last_two[0] == 'e' && last_two[1] != 'l' {
+            count = count - 1;
+        }
     }
 
     return count;
