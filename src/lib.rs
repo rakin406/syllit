@@ -19,7 +19,7 @@ pub fn count_syllables(word: &str) -> i32 {
     for c in mod_word.chars() {
         if is_vowel(c) || c == 'y' {
             // Vowel team
-            if c != prev_char && !is_vowel(prev_char) {
+            if c != prev_char && !is_vowel(prev_char) && prev_char != 'y' {
                 count = count + 1;
             }
         }
