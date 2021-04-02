@@ -26,13 +26,17 @@ fn main() {
 fn count_syllables(word: &str) -> i32 {
     let vowels = "aeiou";
     let mut count = 0;
+    let mut prev_char = '\0';
 
     // Find vowels in word
     for i in vowels.chars() {
         for j in word.to_ascii_lowercase().chars() {
             if j == i {
-                count = count + 1;
+                if j != prev_char {
+                    count = count + 1;
+                }
             }
+            prev_char = j;
         }
     }
 
