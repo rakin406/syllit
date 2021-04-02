@@ -30,11 +30,6 @@ pub fn count_syllables(word: &str) -> i32 {
     let last_two: Vec<char> = word.to_ascii_lowercase().chars().rev().take(2).collect();
     if last_two[0] == 'e' && last_two[1] != 'l' {
         count = count - 1;
-    } else if last_two[0] == 'd' && last_two[1] == 'e' {
-        // Don't count "ed"
-        // TODO: "Batted" has two syllables, it has to count "ed". Gotta solve
-        // this problem.
-        count = count - 1;
     }
 
     return count;
