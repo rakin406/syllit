@@ -35,20 +35,17 @@ fn is_vowel(letter: char) -> bool {
 
 /// Return count of syllables in word
 fn count_syllables(word: &str) -> i32 {
-    let vowels = "aeiou";
     let mut count = 0;
     let mut prev_char = '\0';
 
     // Find vowels in word
-    for i in vowels.chars() {
-        for j in word.to_ascii_lowercase().chars() {
-            if j == i {
-                if j != prev_char {
-                    count = count + 1;
-                }
+    for c in word.to_ascii_lowercase().chars() {
+        if is_vowel(c) {
+            if c != prev_char {
+                count = count + 1;
             }
-            prev_char = j;
         }
+        prev_char = c;
     }
 
     // Magic e syllable, consonant 'l' must not exist before 'e'
