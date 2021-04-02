@@ -26,11 +26,16 @@ pub fn count_syllables(word: &str) -> i32 {
         prev_char = c;
     }
 
-    // Magic e syllable, consonant 'l' must not exist before 'e'
-    if count >= 2 {
+    if count > 1 {
+        // Magic e syllable, consonant 'l' must not exist before 'e'
         let last_two: Vec<char> = word.to_ascii_lowercase().chars().rev().take(2).collect();
         if last_two[0] == 'e' && last_two[1] != 'l' {
             count = count - 1;
+        }
+
+        // Example: Deactivate
+        if word.to_ascii_lowercase().contains("ea") {
+            count = count + 1;
         }
     }
 
