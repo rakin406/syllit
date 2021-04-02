@@ -22,6 +22,17 @@ fn main() {
     }
 }
 
+/// Return if letter is vowel or not
+fn is_vowel(letter: char) -> bool {
+    let vowels = "aeiou";
+    for c in vowels.chars() {
+        if c == letter.to_ascii_lowercase() {
+            return true;
+        }
+    }
+    return false;
+}
+
 /// Return count of syllables in word
 fn count_syllables(word: &str) -> i32 {
     let vowels = "aeiou";
