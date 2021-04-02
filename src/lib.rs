@@ -38,6 +38,11 @@ pub fn count_syllables(word: &str) -> i32 {
         if mod_word.contains("ea") {
             count = count + 1;
         }
+
+        // Example: Worrying
+        if mod_word.contains("ying") {
+            count = count + 1;
+        }
     }
 
     return count;
