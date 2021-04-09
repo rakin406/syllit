@@ -8,8 +8,8 @@ fn main() {
 
     // Process CLI argument
     if args.len() > 1 {
+        // Help info
         if args[1] == "-h" || args[1] == "--help" {
-            // Help info
             println!("Usage: ./syllit <word>");
             println!("Example: ./syllit hello");
         } else {
